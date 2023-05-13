@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:uniclima/screens/home.dart';
+import 'package:uniclima/theme/dark_theme.dart';
+import 'package:uniclima/theme/light_theme.dart';
 
-void main() {
-  runApp(const MainApp());
+void main(){
+  runApp(const UniClima());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class UniClima extends StatelessWidget {
+  const UniClima({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      home: const Home(),
+      title: 'UniClima',
+      debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: lightTheme(),
+      darkTheme: darkTheme(),
     );
   }
 }
